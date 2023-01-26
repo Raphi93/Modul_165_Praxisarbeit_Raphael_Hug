@@ -1,15 +1,16 @@
-﻿using JetStreamServiceNoSqlAPI.Models;
-using JetStreamServiceNoSqlAPI.Service;
+﻿using JetStreamAPInoSql.Models;
+using JetStreamAPInoSql.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JetStreamServiceNoSqlAPI.Controllers
+namespace JetStreamAPInoSql.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UserTokenController : ControllerBase
     {
+
         #region Prop und Kunst
         public List<User> Users { get; set; } = new List<User>();
         private readonly IJwtService _jwtService;
@@ -57,5 +58,6 @@ namespace JetStreamServiceNoSqlAPI.Controllers
             }
         }
         #endregion
+
     }
 }

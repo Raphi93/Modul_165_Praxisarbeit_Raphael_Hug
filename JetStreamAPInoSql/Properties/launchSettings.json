@@ -4,12 +4,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:14014",
-      "sslPort": 44320
+      "applicationUrl": "http://localhost:42100",
+      "sslPort": 44363
     }
   },
   "profiles": {
-    "WebApplication1": {
+    "JetStreamAPInoSql": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

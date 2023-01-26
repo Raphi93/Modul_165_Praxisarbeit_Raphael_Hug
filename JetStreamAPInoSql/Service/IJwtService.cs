@@ -1,6 +1,6 @@
-﻿using JetStreamServiceNoSqlAPI.Models;
+﻿using JetStreamAPInoSql.Models;
 
-namespace JetStreamServiceNoSqlAPI.Service
+namespace JetStreamAPInoSql.Service
 {
     public interface IJwtService
     {

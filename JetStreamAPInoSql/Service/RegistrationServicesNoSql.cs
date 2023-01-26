@@ -1,12 +1,13 @@
-﻿using Microsoft.Extensions.Options;
+﻿using JetStreamAPInoSql.Models;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using JetStreamServiceNoSqlAPI.Models;
-using MongoDB.Bson.IO;
 
-namespace JetStreamServiceNoSqlAPI.Service 
+namespace JetStreamAPInoSql.Service
 {
     public class RegistrationServicesNoSql : IRegistrationServices
     {
+
+        #region Prop und Kunstrucktor
         private readonly IMongoCollection<Registration> _regi;
         private readonly ILogger<RegistrationServicesNoSql> _logger;
 
@@ -22,7 +23,9 @@ namespace JetStreamServiceNoSqlAPI.Service
                 jetStreamDatabaseSettings.Value.ServicesCollectionName);
             _logger = logger;
         }
+        #endregion
 
+        #region GetAll und Gets
         public List<Registration> GetAll()
         {
             try
@@ -48,7 +51,9 @@ namespace JetStreamServiceNoSqlAPI.Service
                 return null;
             }
         }
+        #endregion
 
+        #region Add
         public void Add(Registration reg)
         {
             try
@@ -61,7 +66,9 @@ namespace JetStreamServiceNoSqlAPI.Service
                 return;
             }
         }
+        #endregion
 
+        #region Update
         public void Update(string id, Registration reg)
         {
             try
@@ -74,5 +81,7 @@ namespace JetStreamServiceNoSqlAPI.Service
                 return;
             }
         }
+        #endregion
+
     }
 }

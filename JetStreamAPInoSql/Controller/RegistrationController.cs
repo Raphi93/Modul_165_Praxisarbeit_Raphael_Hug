@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using JetStreamServiceNoSqlAPI.Models;
-using JetStreamServiceNoSqlAPI.Service;
+﻿using JetStreamAPInoSql.Models;
+using JetStreamAPInoSql.Service;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-namespace JetStreamServiceNoSqlAPI.Controllers
+namespace JetStreamAPInoSql.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class RegistrationController : ControllerBase
     {
+
         #region Prop und Kunstruktor
         private IRegistrationServices _regService;
         private readonly ILogger<RegistrationController> _logger;

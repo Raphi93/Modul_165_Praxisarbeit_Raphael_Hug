@@ -1,4 +1,4 @@
-﻿using JetStreamServiceNoSqlAPI.Models;
+﻿using JetStreamAPInoSql.Models;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
@@ -6,7 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace JetStreamServiceNoSqlAPI.Service
+namespace JetStreamAPInoSql.Service
 {
     public class JwtService : IJwtService
     {
@@ -82,5 +82,6 @@ namespace JetStreamServiceNoSqlAPI.Service
             }
         }
         #endregion
+
     }
 }

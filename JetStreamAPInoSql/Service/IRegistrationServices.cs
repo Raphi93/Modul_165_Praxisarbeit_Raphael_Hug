@@ -1,7 +1,6 @@
-﻿using Microsoft.Extensions.Options;
-using JetStreamServiceNoSqlAPI.Models;
+﻿using JetStreamAPInoSql.Models;
 
-namespace JetStreamServiceNoSqlAPI.Service
+namespace JetStreamAPInoSql.Service
 {
     public interface IRegistrationServices
     {

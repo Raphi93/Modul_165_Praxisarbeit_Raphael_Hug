@@ -1,4 +1,4 @@
-﻿namespace JetStreamServiceNoSqlAPI.Models
+﻿namespace JetStreamAPInoSql.Models
 {
     public class SkiServiceJetStreamDatabaseSetting
     {
@@ -9,6 +9,5 @@
         public string ServicesCollectionName { get; set; } = null!;
 
         public string UserCollectionName { get; set; } = null!;
-
     }
 }

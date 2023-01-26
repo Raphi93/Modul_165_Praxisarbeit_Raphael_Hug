@@ -2,11 +2,10 @@
 using MongoDB.Bson;
 using System.Text.Json.Serialization;
 
-namespace JetStreamServiceNoSqlAPI.Models
+namespace JetStreamAPInoSql.Models
 {
     public class User
     {
-
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? _id { get; set; }

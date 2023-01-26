@@ -1,9 +1,8 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System.ComponentModel.DataAnnotations;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 using System.Text.Json.Serialization;
 
-namespace JetStreamServiceNoSqlAPI.Models
+namespace JetStreamAPInoSql.Models
 {
     public class Registration
     {
