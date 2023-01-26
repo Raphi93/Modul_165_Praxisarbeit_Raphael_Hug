@@ -8,6 +8,9 @@ using System.Text;
 
 namespace JetStreamAPInoSql.Service
 {
+    /// <summary>
+    /// Logik für den Token
+    /// </summary>
     public class JwtService : IJwtService
     {
         #region Prop und Kunstruktor

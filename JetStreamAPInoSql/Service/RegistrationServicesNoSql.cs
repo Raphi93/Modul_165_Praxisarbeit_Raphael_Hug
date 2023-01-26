@@ -4,6 +4,9 @@ using MongoDB.Driver;
 
 namespace JetStreamAPInoSql.Service
 {
+    /// <summary>
+    /// Registrationen Logik
+    /// </summary>
     public class RegistrationServicesNoSql : IRegistrationServices
     {
 
@@ -26,6 +29,11 @@ namespace JetStreamAPInoSql.Service
         #endregion
 
         #region GetAll und Gets
+        /// <summary>
+        /// Gint alle Daten bei Registration  aus
+        /// </summary>
+        /// <exception cref="MongoException"></exception>
+        /// <returns>Liste aler Regitrationen</returns>
         public List<Registration> GetAll()
         {
             try
@@ -38,7 +46,11 @@ namespace JetStreamAPInoSql.Service
                 return null;
             }
         }
-
+        /// <summary>
+        /// Gibt nur den bestimte Daten aus per id
+        /// </summary>
+        /// <exception cref="MongoException"></exception>
+        /// <returns>Liste id Regitrationen</returns>
         public Registration Get(string id)
         {
             try
@@ -54,6 +66,11 @@ namespace JetStreamAPInoSql.Service
         #endregion
 
         #region Add
+        /// <summary>
+        /// Ein Kunde Hinzufügen
+        /// </summary>
+        /// <exception cref="MongoException"></exception>
+        /// <param name="reg"></param>
         public void Add(Registration reg)
         {
             try
@@ -69,6 +86,12 @@ namespace JetStreamAPInoSql.Service
         #endregion
 
         #region Update
+        /// <summary>
+        /// Ein Kunde Updaten
+        /// </summary>
+        /// <exception cref="MongoException"></exception>
+        /// <param name="id"></param>
+        /// <param name="reg"></param>
         public void Update(string id, Registration reg)
         {
             try

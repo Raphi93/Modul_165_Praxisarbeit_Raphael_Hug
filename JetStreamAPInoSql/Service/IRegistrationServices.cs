@@ -2,6 +2,9 @@
 
 namespace JetStreamAPInoSql.Service
 {
+    /// <summary>
+    /// Interface für Registration
+    /// </summary>
     public interface IRegistrationServices
     {
         public List<Registration> GetAll();
