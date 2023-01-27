@@ -71,6 +71,11 @@ namespace JetStreamAPInoSql.Service
         #endregion
 
         #region Login
+        /// <summary>
+        /// Liest alle User aus und gibt es dan im return
+        /// </summary>
+        /// <returns>Alle users daten</returns>
+        /// <exception cref="Exception"></exception>
         public List<User> Login()
         {
             try
