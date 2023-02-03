@@ -38,7 +38,7 @@ namespace JetStreamAPInoSql.Service
         {
             try
             {
-                var get = _regi.Find(x => x.Status != "Gelöscht").Sort(Builders<Registration>.Sort.Ascending(x => x.Status)).ToList();
+                var get = _regi.Find(x => x.Status != "Gelöscht").Sort(Builders<Registration>.Sort.Descending(x => x.Status)).ToList();
                 return get;
             }
             catch (MongoException ex)

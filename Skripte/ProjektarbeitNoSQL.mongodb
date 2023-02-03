@@ -1,0 +1,153 @@
+use SkiServiceJetStream
+
+db.createCollection("Registration", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         title: "Mitglieder Object Validation",
+         required: ["Name", "EMail", "Phone", "CreateDate", "PickupDate", "Service", "Priority", "Status" ],
+         properties: {
+            Name: {
+               bsonType: "string",
+               description: ""
+            },
+            EMail: {
+               bsonType: "string",
+               description: ""
+            },
+            Phone: {
+               bsonType: "string",
+               description: ""
+            },
+            CreateDate: {
+               bsonType: "date",
+               description: "CreateDate must be a date and is required"
+            },
+            PickupDate: {
+               bsonType: "date",
+               description: "PickupDate must be a date and is required"
+            },
+            Priority: {
+               enum: ["Express", "Standard", "Tief"],
+               bsonType: "string",
+               description: "Priority must be a string"
+            },
+            Kommentar: {
+               bsonType: "string",
+               description: ""
+            },
+            Status: {
+                enum: ["Offen", "In Arbeit", "Fertig", "Gelöscht"],
+                bsonType: "string",
+                description: "Status must be a string"
+            },
+            Service: {
+                enum: ["Kleiner-Service", "Grosser-Service", "Rennski-Service", "Bindugen montieren und Einstellen", "Heisswachsen", "Fell zuschneiden"],
+                bsonType: "string",
+                description: "Service must be a string"
+            }
+         }
+        }
+    }
+} )
+
+
+// eine variante oder dan vom migrieren vom SQl aber da muss die datum spinnt musste alles nachbessern
+mongoimport --db restaurant --jsonarray --collection restaurants --file D:\temp\Registration.json
+//oder wen man nicht ein JSON file macht so
+db.Registration.insertMany([
+    {
+         Name: "John Doe",
+         EMail: "johndoe@example.com",
+         Phone: "555-555-5555",
+         CreateDate: new Date(),
+         PickupDate: new Date(),
+         Priority: "Standard",
+         Kommentar: "",
+         Status: "Offen",
+         Service: "Kleiner-Service"
+   },
+    {
+        Name: "Jane Smith",
+EMail: "janesmith@example.com",
+Phone: "555-555-5555",
+CreateDate: new Date(),
+PickupDate: new Date(),
+Priority: "Express",
+Kommentar: "",
+Status: "In Arbeit",
+Service: "Rennski-Service"
+    },
+    {
+        Name: "Bob Johnson",
+EMail: "bobjohnson@example.com",
+Phone: "555-555-5555",
+CreateDate: new Date(),
+PickupDate: new Date(),
+Priority: "Tief",
+Kommentar: "",
+Status: "Fertig",
+Service: "Heisswachsen"
+    },
+    {
+        Name: "Emily Davis",
+EMail: "emilydavis@example.com",
+Phone: "555-555-5555",
+CreateDate: new Date(),
+PickupDate: new Date(),
+Priority: "Standard",
+Kommentar: "",
+Status: "Gelöscht",
+Service: "Kleiner-Service"
+    },
+    {
+        Name: "Michael Brown",
+EMail: "michaelbrown@example.com",
+Phone: "555-555-5555",
+CreateDate: new Date(),
+PickupDate: new Date(),
+Priority: "Express",
+Kommentar: "",
+Status: "Offen",
+Service: "Bindugen montieren und Einstellen"
+    },
+    {
+        Name: "Ashley Taylor",
+EMail: "ashleytaylor@example.com",
+Phone: "555-555-5555",
+CreateDate: new Date(),
+PickupDate: new Date(),
+Priority: "Tief",
+Kommentar: "",
+Status: "In Arbeit",
+Service: "Fell zuschneiden"
+    }
+])
+
+db.User.insertOne({
+   Name: "Raphi",
+   Password: "M165"
+})
+//  index
+db.Registration.createIndex({ Status: -1 })
+
+//Backup im Powershell ausführen nicht in Mongodb und der systemvariable angeben
+mongodump --uri "mongodb://localhost:27017/SkiServiceJetStream" --collection Registration --collection User -o D:\temp\\mongo_backup
+
+//Restore im Powershell ausführen nicht in Mongodb und der systemvariable angeben
+mongorestore --uri "mongodb://localhost:27017" --drop D:\temp\mongo_backup\SkiServiceJetStream
+
+//user
+db.createUser({
+  user: "JetStream",
+  pwd: "TestTest",
+  roles: [
+    {
+      role: "readWrite",
+      db: "SkiServiceJetStream"
+    }
+  ]
+})
+
+
+

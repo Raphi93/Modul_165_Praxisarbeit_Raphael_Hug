@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "1638e9e8-014c-41cf-94e3-dd67b80806d2",
+		"name": "Projektarbeit M165",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22832964"
+	},
+	"item": [
+		{
+			"name": "Gett All Registraion",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"removeRefererHeaderOnRedirect": true,
+				"tlsPreferServerCiphers": true,
+				"disableCookies": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJSYXBoaSIsIm5iZiI6MTY3NDc2NDM1MSwiZXhwIjoxNjc1MzY5MTUxLCJpYXQiOjE2NzQ3NjQzNTF9.RNL0zi_rAskkK9XUmug3mq7fSpIy0U1fMBQt3ej81RFUOMU2q6wVJkv0hZHPH3gbe_ku5FoCI8o9sxSDX5I8QA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7060/api/Registration",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7060",
+					"path": [
+						"api",
+						"Registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJSYXBoaSIsIm5iZiI6MTY2ODEwMzU0OCwiZXhwIjoxNjY4MTA0NDQ4LCJpYXQiOjE2NjgxMDM1NDh9.lNSkuykQ_P_7OzouR9qjsYFc2FKiq-PxcafsusjaO9FxZhfu3EMBQnFVbAR8NO_xL23RZobygU8N_Hxd1kF8aA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7293/Registration/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7293",
+					"path": [
+						"Registration",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete reg",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:7293/Registration/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7293",
+					"path": [
+						"Registration",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update reg",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJSYXBoaSIsIm5iZiI6MTY2NzkwODcyNiwiZXhwIjoxNjY3OTA5NjI2LCJpYXQiOjE2Njc5MDg3MjZ9.pOK-ulkpbbmhDouWWlw3INPzY-yLhzy0KG0ppaKNc91VNVlLrdPJX4A0iumueyNU98wKp1FGTgX7cVl1VokKzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Max Muster\",\r\n        \"email\": \"Max.Muster@Hallo.ch\",\r\n        \"phone\": \"07944363\",\r\n        \"priority\": \"Tief\",\r\n        \"service\": \"Fell zuschneiden\",\r\n        \"status\": \"In Arbeit\",\r\n        \"kommentar\": \"\",\r\n        \"create_date\": \"2018-11-05T17:59:22.277\",\r\n        \"pickup_date\": \"2019-11-05T17:59:22.277\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7060/api/Registration/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7060",
+					"path": [
+						"api",
+						"Registration",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Reg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Maimi DeCilia\",\r\n  \"email\": \"Maimig@gmx.net\",\r\n  \"phone\": \"05646641\",\r\n  \"priority\": \"Standard\",\r\n  \"status\": \"Offen\",\r\n  \"service\": \"Heisswachsen\",\r\n  \"kommentar\": \"test2\",\r\n  \"create_date\": \"2018-11-05T17:59:22.277Z\",\r\n  \"pickup_date\": \"2019-11-05T17:59:22.277Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7060/api/Registration",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7060",
+					"path": [
+						"api",
+						"Registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_name\": \"Raphi\",\r\n  \"password\": \"M295\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7060/api/UserToken/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7060",
+					"path": [
+						"api",
+						"UserToken",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
